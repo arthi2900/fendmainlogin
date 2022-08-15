@@ -45,7 +45,7 @@ useEffect(movieview, []);
   </>
 ) :(
   <>
-  <Link to="/userpage/home">home
+  <Link to="/user/:id">home
              </Link>
             <button onClick={logout}>logout</button>
   </>
