@@ -5,7 +5,7 @@ import { Login } from './auth/Login/Login';
 import { Register } from './auth/Register/Register';
 import { Home } from './pages/Home/Home';
 import {Switch,Link,Route,useHistory} from "react-router-dom";
-
+import { api } from './api';
 function App() {
   const history=useHistory();
   const [data,setData]=useState(null);
@@ -20,7 +20,7 @@ function App() {
     if (!token) {
         history.push("/login");
     }
- const res=fetch(`https://appmain1.herokuapp.com/user/`
+ const res=fetch(`${api}/user/home`
 ,{ method: "GET",
 headers: {
     "x-auth-token": token,
@@ -45,7 +45,7 @@ useEffect(movieview, []);
   </>
 ) :(
   <>
-  <Link to="/user/:id">home
+  <Link to="/user/home">home
              </Link>
             <button onClick={logout}>logout</button>
   </>

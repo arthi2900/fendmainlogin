@@ -26,8 +26,6 @@ export function Login({setToken,setUser}) {
     }})
 }
  
-    
-  
 catch(err){
   console.log("not data display")
 }

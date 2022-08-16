@@ -5,11 +5,19 @@ import { api } from "../../api";
 export function Home() {
   const{id}=useParams();
   const[data,setData]=useState({});
-useEffect(()=>{
+  const homedata =async(e)=>{
+try{
   fetch(`${api}/auth/${id}`,{method:"GET"})
-.then((data1)=>data1.json())
-.then((mvs)=>setData(mvs))
-.catch((err)=>console.log(err))
+  .then((data1)=>data1.json())
+  .then((mvs)=>setData(mvs))
+  .catch((err)=>console.log(err))
+}
+catch(err){
+
+}
+  }
+useEffect(()=>{
+ 
 },[])
    
   return (
