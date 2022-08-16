@@ -22,7 +22,7 @@ export function Login({setToken,setUser}) {
       setToken(tok.token,usernamemain)
   //setUser(  localStorage.getItem("username"))
       console.log(usernamemain);
-      history.push("/user/:id")
+      history.push("/user/home")
     }})
 }
  
