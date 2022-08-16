@@ -16,7 +16,7 @@ function App() {
     setToken(null)
     history.push("/login")
   }
-  const movieview = () => {
+  const userview = () => {
     if (!token) {
         history.push("/login");
     }
@@ -32,7 +32,7 @@ headers: {
 }).catch(err=>console.log("err",err))
 };
 
-useEffect(movieview, []);
+useEffect(userview, []);
   return (
     <div className="App">
   {
