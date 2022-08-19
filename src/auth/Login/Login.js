@@ -21,8 +21,9 @@ export function Login({setToken,setUser}) {
     // localStorage.setItem("username",usernamemain)
       setToken(tok.token,usernamemain)
   //setUser(  localStorage.getItem("username"))
+  //const id="62fc87dfe65438d70bdf9af0" ;
       console.log(usernamemain);
-      history.push("/user/home")
+      history.push(`/user/`)
     }})
 }
  

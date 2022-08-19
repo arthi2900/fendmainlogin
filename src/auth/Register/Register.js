@@ -23,13 +23,10 @@ const handlesubmit=async (e)=>{
     headers:{"Content-Type":"application/json"
     },})
     .then(()=>history.push("/auth/login"));
-  
-  }
- 
- catch(err){
+    }
+  catch(err){
   setError(true);
  }
-
 };
   return (
     <>

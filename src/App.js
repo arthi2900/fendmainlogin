@@ -6,6 +6,7 @@ import { Register } from './auth/Register/Register';
 import { Home } from './pages/Home/Home';
 import {Switch,Link,Route,useHistory} from "react-router-dom";
 import { api } from './api';
+
 function App() {
   const history=useHistory();
   const [data,setData]=useState(null);
@@ -16,24 +17,25 @@ function App() {
     setToken(null)
     history.push("/login")
   }
-  const userview = () => {
+ /* const userview = () => {
     if (!token) {
         history.push("/login");
     }
- const res=fetch(`${api}/user/home`
+ const res=fetch(`${api}/user/`
 ,{ method: "GET",
 headers: {
     "x-auth-token": token,
         }
 
 }).then((res)=>res.json())
-.then((a)=>{
-   setData(res.data)
+.then((data1)=>{
+  console.log(res.data1)
 }).catch(err=>console.log("err",err))
 };
 
 useEffect(userview, []);
-  return (
+*/  
+return (
     <div className="App">
   {
 !token ? (
@@ -45,20 +47,17 @@ useEffect(userview, []);
   </>
 ) :(
   <>
-  <Link to="/user/home">home
+  <Link to="/user/">home
              </Link>
             <button onClick={logout}>logout</button>
   </>
 )
   }  
-           
-             
-
-      <Switch>
+               <Switch>
 
       <Route path="/auth/register"><Register/> </Route>
       <Route path="/auth/login"><Login setToken={setToken} setUser={setUser}/> </Route>
-      <Route path="/userpage/home"><Home /></Route>
+      <Route path="/user/"><Home /></Route>
      
       </Switch>
    
