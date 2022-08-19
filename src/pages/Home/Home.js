@@ -21,23 +21,10 @@ export function Home() {
   useEffect(()=>datamain(), []);
   return (
 <>
-{data.map(({username,id},index)=>(
-  <Userdetails key={index} username={username}
-  id={id}
-  />
-))
- }
+<h1>hi all</h1>
 
 </>
      
    );
 }
 
-export function Userdetails({username}){
-  return(
-<>
-<h1>hi all {username}</h1>
-
-</>
-  )
-}
